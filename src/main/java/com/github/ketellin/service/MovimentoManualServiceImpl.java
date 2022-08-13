@@ -38,8 +38,8 @@ public class MovimentoManualServiceImpl implements MovimentoManualService{
     public MovimentoManualResponse salvarMovimento(MovimentoManualRequest movimentoManualRequest) {
 
         MovimentoManualModel movManModel = movimentoManualAdapter.mapTo(movimentoManualRequest);
-        MovimentoManual movimentoManual = movimentoManualFactory.createFrom(movManModel);
-        MovimentoManual movimentoNovo = movimentoManualDao.save(movimentoManual);
+        MovimentoManual movimentoManual  = movimentoManualFactory.createFrom(movManModel);
+        MovimentoManual movimentoNovo    = movimentoManualDao.save(movimentoManual);
 
         return movimentoManualAdapter.mapTo(movimentoNovo);
     }

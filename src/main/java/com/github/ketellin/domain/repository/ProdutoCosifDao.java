@@ -14,4 +14,6 @@ public interface ProdutoCosifDao extends JpaRepository<ProdutoCosif, ProdCosifId
     ProdutoCosif findProdutoCosifByProdCosifId_CodCosifAndProdCosifId_Produto_CodProduto(
             @Param("codCosif") String codCosif,
             @Param("codProduto") String codProduto);
+
+
 }

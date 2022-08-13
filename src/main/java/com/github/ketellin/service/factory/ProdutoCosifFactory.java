@@ -21,8 +21,8 @@ public class ProdutoCosifFactory {
                             produtoCosifModel.getCodCosif(),
                             produtoCosifModel.getProdutoModel().getCodProduto());
             return ProdutoCosif.builder()
-                    .staStatus(produtoCosifModel.getStaStatus())
-                    .codClassificacao(produtoCosifModel.getCodClassificacao())
+                    .staStatus(produtoCosifEntity.getStaStatus())
+                    .codClassificacao(produtoCosifEntity.getCodClassificacao())
                     .prodCosifId(produtoCosifEntity.getProdCosifId())
                     .build();
         }catch (Exception e){
