@@ -11,7 +11,6 @@ public class MovimentoManualFactory {
 
     private final MovimManIdFactory movimManIdFactory;
 
-    int teste = 0;
     public MovimentoManual createFrom (MovimentoManualModel movimentoManualModel){
 
         return MovimentoManual.builder()
