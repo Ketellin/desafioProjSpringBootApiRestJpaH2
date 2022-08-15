@@ -3,15 +3,13 @@ package com.github.ketellin.rest.controller;
 import com.github.ketellin.domain.dto.ProdutoCosifResponse;
 import com.github.ketellin.service.ProdutoCosifService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/cosifs")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProdutoCosifController {
 
     @Autowired
@@ -24,7 +22,7 @@ public class ProdutoCosifController {
     })*/
     public List<ProdutoCosifResponse> getCosifsByCodProduto(@PathVariable String codProduto){
         return produtoCosifService.findProdutoCosifByProdCosifIdI(codProduto);
-        //return produtoCosifService.;
+
     }
 
 }

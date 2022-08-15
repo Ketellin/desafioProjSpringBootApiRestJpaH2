@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+import static org.springframework.http.HttpStatus.CREATED;
+
 @RestController
 @RequestMapping("/api/movimentos")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MovimentoManualController{
 
     @Autowired
@@ -25,6 +28,7 @@ public class MovimentoManualController{
     }
 
     @PostMapping
+    @ResponseStatus(CREATED)
     public ResponseEntity<MovimentoManualResponse> saveMovimentos (@RequestBody @Valid MovimentoManualRequest movimentoManualRequest){
         //usar RepresentationModelAssembler
 
@@ -32,4 +36,18 @@ public class MovimentoManualController{
 
         return ResponseEntity.ok(response);
     }
+
 }
+
+/*
+EXEMPLO DE JSON
+* {
+	"datMes":1,
+    "datAno":2022,
+	"codProduto":"002",
+	"codCosif":"COSIF001",
+	"desDescricao":"DESCRICAO PARA MOVIMENTO 2",
+    "valValor":33
+}
+*
+* */
